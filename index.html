@@ -1,0 +1,883 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FFF6E4">
+<title>新加坡繽紛獅城手帖｜2027.03.30–04.05</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Huninn&display=swap">
+<style>
+:root{
+  --paper:#FFF6E4;
+  --ink:#1D2E2C;
+  --ink-soft:#52706C;
+  --teal:#179B92;
+  --magenta:#EF5080;
+  --saffron:#FFB732;
+  --jade:#4CA66B;
+  --sunset:#FF7A45;
+  --white:#FFFFFF;
+  --font:"Baloo 2","Huninn","jf-openhuninn","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --line:3px solid var(--ink);
+  --shadow:4px 5px 0 var(--ink);
+  --r-lg:26px;
+  --r-md:18px;
+  --nav-h:58px;
+  color-scheme:light;
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 14px)}
+body{
+  margin:0;
+  overflow-x:hidden;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font);
+  font-size:16px;
+  line-height:1.7;
+  font-weight:400;
+  font-synthesis:none;
+  padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px));
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+p,small,dd,.note,.tl-desc,.budget-row .name,.check span,.event-desc{overflow-wrap:break-word;word-break:break-word}
+h1,h2,h3,p,ul{margin:0}
+h1,h2,h3{font-weight:700;text-wrap:balance;line-height:1.3}
+ul{padding:0;list-style:none}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* 頂端固定選單 */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  background:var(--paper);border-bottom:var(--line);
+  padding-top:env(safe-area-inset-top,0px);
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.nav-in{
+  max-width:680px;margin:0 auto;height:var(--nav-h);
+  display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;
+}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{
+  flex:0 0 auto;text-decoration:none;font-size:15px;
+  padding:5px 12px;border:var(--line);border-radius:999px;background:var(--white);
+}
+.nav a.brand{background:var(--magenta);color:var(--white)}
+.nav a:active{transform:translateY(2px)}
+
+/* 主容器：固定 680px 置中 */
+.wrap{
+  max-width:680px;margin:0 auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:20px 48px;
+  display:flex;flex-direction:column;gap:34px;
+}
+section{display:flex;flex-direction:column;gap:14px}
+.sec-title{display:flex;align-items:center;gap:10px;font-size:24px}
+.sec-title .dot{width:18px;height:18px;border:var(--line);border-radius:50%;flex:0 0 auto}
+.card{border:var(--line);border-radius:var(--r-lg);background:var(--white);padding:18px;box-shadow:var(--shadow)}
+.note{font-size:14px;color:var(--ink-soft)}
+
+/* 首頁 */
+.hero{border:var(--line);border-radius:var(--r-lg);background:var(--white);overflow:hidden;box-shadow:var(--shadow)}
+.hero-illus{display:flex;justify-content:center;padding:16px 16px 0}
+.hero svg{display:block;width:100%;max-width:420px;height:auto;border:var(--line);border-radius:var(--r-md)}
+.hero-body{padding:18px;display:flex;flex-direction:column;gap:12px}
+.eyebrow{font-size:14px;letter-spacing:.06em;color:var(--ink-soft)}
+.hero h1{font-size:clamp(24px,7.4vw,40px)}
+.hero h1 span{background:var(--saffron);border-radius:10px;padding:0 6px;white-space:nowrap;display:inline-block}
+.count{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  border:var(--line);border-radius:var(--r-md);background:var(--saffron);padding:12px 16px;
+}
+.count-big{font-size:44px;line-height:1;font-variant-numeric:tabular-nums}
+.count-txt{display:flex;flex-direction:column;font-size:15px;line-height:1.4;min-width:0}
+.count-sub{font-variant-numeric:tabular-nums;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:var(--line);border-radius:999px;padding:2px 12px;font-size:14px;background:var(--paper)}
+
+/* 航班 */
+.flights{display:grid;gap:14px}
+@media(min-width:560px){.flights{grid-template-columns:1fr 1fr}}
+.flight{border:var(--line);border-radius:var(--r-lg);background:var(--white);overflow:hidden;box-shadow:var(--shadow)}
+.flight-top{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:var(--line);font-size:15px}
+.flight.go .flight-top{background:var(--magenta);color:var(--white)}
+.flight.back .flight-top{background:var(--teal);color:var(--white)}
+.flight-mid{display:flex;align-items:center;gap:10px;padding:16px}
+.port{flex:0 0 auto;display:flex;flex-direction:column;line-height:1.3}
+.port b{font-weight:700;font-size:28px;letter-spacing:.04em}
+.port small{font-size:13px;color:var(--ink-soft)}
+.port.r{text-align:right}
+.route{flex:1;min-width:0;height:0;border-top:3px dashed var(--ink);position:relative}
+.route svg{position:absolute;left:50%;top:-14px;width:28px;height:28px;margin-left:-14px}
+.flight-bot{padding:0 16px 14px;display:flex;flex-direction:column;gap:4px}
+.flight-time{font-size:21px;font-variant-numeric:tabular-nums}
+
+/* 日期切換器 + 單軌小列車動畫 */
+.days{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 30px;scrollbar-width:none;position:relative}
+.days::-webkit-scrollbar{display:none}
+.day-btn{
+  flex:0 0 auto;width:58px;padding:6px 0 8px;
+  border:var(--line);border-radius:var(--r-md);background:var(--white);
+  display:flex;flex-direction:column;align-items:center;line-height:1.2;
+  transition:transform .15s;
+}
+.day-btn small{font-size:12px;color:var(--ink-soft)}
+.day-btn b{font-weight:700;font-size:20px;font-variant-numeric:tabular-nums}
+.day-btn[aria-selected="true"]{background:var(--magenta);color:var(--white);box-shadow:var(--shadow);transform:translateY(-3px)}
+.day-btn[aria-selected="true"] small{color:var(--white)}
+.day-rail{position:absolute;bottom:6px;height:0;border-top:3px dashed var(--ink);pointer-events:none}
+.day-mono{position:absolute;bottom:4px;transform:translateX(-50%);transition:left .5s cubic-bezier(.3,1,.4,1);pointer-events:none}
+.day-mono svg{display:block}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;color:var(--ink-soft)}
+
+.day-panel{border:var(--line);border-radius:var(--r-lg);background:var(--white);padding:18px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow)}
+.day-panel.pop{animation:pop .5s cubic-bezier(.3,1.5,.5,1)}
+.day-head{display:flex;align-items:center;gap:14px}
+.day-icon{flex:0 0 auto;width:64px;height:64px;border:var(--line);border-radius:38% 62% 60% 40%/42% 38% 62% 58%;display:grid;place-items:center;box-shadow:var(--shadow)}
+.day-icon svg{width:44px;height:44px}
+.day-head h3{font-size:22px}
+.day-head p{font-size:14px;color:var(--ink-soft)}
+
+.tl{display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:58px 20px 1fr;column-gap:10px}
+.tl-time{font-size:15px;font-variant-numeric:tabular-nums;text-align:right;padding-top:1px}
+.tl-rail{position:relative}
+.tl-rail::before{content:"";position:absolute;left:8.5px;top:0;bottom:0;width:3px;background:var(--ink)}
+.tl li:first-child .tl-rail::before{top:10px}
+.tl li:last-child .tl-rail::before{bottom:calc(100% - 12px)}
+.tl-rail::after{content:"";position:absolute;left:1px;top:5px;width:18px;height:18px;border:var(--line);border-radius:50%;background:var(--white)}
+.tl li.must .tl-rail::after{background:var(--magenta)}
+.tl-body{min-width:0;padding-bottom:18px;display:flex;flex-direction:column;gap:5px}
+.tl li:last-child .tl-body{padding-bottom:0}
+.tl-name{font-size:18px;line-height:1.4;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.map-link{color:inherit;text-decoration:none;border-bottom:2px solid var(--ink);display:inline-flex;align-items:center;gap:3px}
+.tl-link{margin-top:2px;font-size:13px}
+.tl-link .map-link{font-size:13px;color:var(--ink-soft);border-bottom-color:var(--ink-soft)}
+.map-link .pin{flex:0 0 auto;color:var(--ink-soft)}
+.maplink-pill{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:var(--paper);border:var(--line);border-radius:999px;padding:3px 14px;font-size:14px;text-decoration:none;color:inherit;margin-top:6px}
+.must-tag{font-size:12px;background:var(--magenta);color:var(--white);border:2px solid var(--ink);border-radius:8px;padding:0 6px;line-height:1.6;transform:rotate(-3deg)}
+.flex-tag{font-size:12px;background:var(--saffron);border:2px solid var(--ink);border-radius:8px;padding:0 6px;line-height:1.6}
+.tl-desc{font-size:14px;color:var(--ink-soft);line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:13px;border:2px solid var(--ink);border-radius:999px;padding:0 9px;line-height:1.7}
+.t-air{background:var(--sunset);color:var(--white)}
+.t-bus{background:var(--saffron)}
+.t-mrt{background:var(--teal);color:var(--white)}
+.t-mono{background:var(--jade);color:var(--white)}
+.t-walk{background:var(--paper)}
+
+/* 夜間限定活動卡片 */
+.events-card{background:var(--paper)}
+.event-item{padding:12px 0;border-bottom:2px dashed var(--teal);display:flex;flex-direction:column;gap:4px}
+.event-item:last-of-type{border-bottom:0}
+.event-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:17px}
+.rec-tag{font-size:12px;background:var(--magenta);color:var(--white);border:2px solid var(--ink);border-radius:8px;padding:0 6px;line-height:1.6}
+.event-meta{font-size:13px;color:var(--ink-soft)}
+.event-desc{font-size:14px;color:var(--ink);line-height:1.6}
+
+/* 住宿 */
+.stay-grid{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin-top:10px}
+.stay-grid dt{color:var(--ink-soft);font-size:14px}
+.stay-grid dd{margin:0;min-width:0}
+
+/* 天氣 */
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.weather-box{border:var(--line);border-radius:var(--r-md);padding:12px;background:var(--teal);color:var(--white);box-shadow:var(--shadow)}
+.weather-box.alt{background:var(--saffron);color:var(--ink)}
+.weather-box b{font-size:20px}
+.weather-box small{display:block;font-size:12px;margin-top:2px}
+
+/* 行前費用分頁 */
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab-btn{border:2px solid var(--ink);border-radius:999px;background:var(--white);padding:5px 14px;font-size:14px}
+.tab-btn[aria-selected="true"]{background:var(--saffron);box-shadow:3px 3px 0 var(--ink)}
+.tabbody{margin-top:12px}
+.rows{display:flex;flex-direction:column}
+.row-item{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:2px dashed var(--teal)}
+.rows .row-item:last-child{border-bottom:0}
+.row-item small{display:block;font-size:12px;color:var(--ink-soft)}
+.row-item strong{white-space:nowrap;font-variant-numeric:tabular-nums}
+.row-total{display:flex;justify-content:space-between;align-items:center;border-top:var(--line);padding-top:12px;margin-top:6px;font-size:19px}
+
+/* 記帳表單 */
+.formrow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.formrow input,.formrow select{width:100%;min-width:0;border:2px solid var(--ink);border-radius:12px;padding:8px;background:var(--white);font:inherit}
+.formrow .wide{grid-column:1/-1}
+.formrow button{border:var(--line);border-radius:999px;background:var(--saffron);padding:7px 14px;box-shadow:3px 3px 0 var(--ink)}
+.day-expense{padding:10px 0;border-bottom:2px dashed var(--teal)}
+.expense-name{display:flex;justify-content:space-between;gap:8px}
+.expense-name button{border:0;background:none;text-decoration:underline;font-size:12px;color:var(--ink-soft)}
+
+/* 費用列表 */
+.budget-list{display:flex;flex-direction:column}
+.budget-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0;border-bottom:2px dashed var(--teal)}
+.budget-list .budget-row:last-child{border-bottom:0}
+.budget-row .name{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;min-width:0}
+.budget-row .name small{display:block;width:100%;font-size:13px;color:var(--ink-soft)}
+.budget-row .amt{flex:0 0 auto;font-variant-numeric:tabular-nums;font-size:17px;white-space:nowrap}
+.budget-total{display:flex;justify-content:space-between;align-items:center;margin-top:4px;padding-top:14px;border-top:var(--line);font-size:20px}
+.budget-total b{font-variant-numeric:tabular-nums}
+.pending-tag{font-size:12px;background:var(--saffron);border:2px solid var(--ink);border-radius:8px;padding:0 6px;line-height:1.6}
+
+/* 清單 */
+.list-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.list-head h3{font-size:19px}
+.prog{font-size:14px;font-variant-numeric:tabular-nums;border:2px solid var(--ink);border-radius:999px;padding:0 10px;background:var(--paper)}
+.bar{height:14px;border:var(--line);border-radius:999px;overflow:hidden;background:var(--paper);margin:10px 0 6px}
+.bar i{display:block;height:100%;width:0;background:var(--jade);border-right:var(--line);transition:width .3s}
+.bar i[data-zero="1"]{border-right:0}
+.group-title{font-size:14px;color:var(--ink-soft);margin-top:12px;letter-spacing:.06em}
+.check{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:2px dashed var(--teal);cursor:pointer}
+.checks .check:last-child{border-bottom:0}
+.check input{
+  appearance:none;-webkit-appearance:none;flex:0 0 auto;margin:1px 0 0;
+  width:26px;height:26px;border:var(--line);border-radius:9px;background:var(--white);
+  position:relative;cursor:pointer;
+}
+.check input:checked{background:var(--jade);animation:tick .35s cubic-bezier(.3,1.6,.5,1)}
+.check input:checked::after{
+  content:"";position:absolute;left:7px;top:2px;width:7px;height:13px;
+  border:solid var(--white);border-width:0 3px 3px 0;transform:rotate(42deg);
+}
+.check span{min-width:0}
+.check small{display:block;font-size:13px;color:var(--ink-soft);line-height:1.5}
+.check input:checked + span{color:var(--ink-soft);text-decoration:line-through;text-decoration-thickness:2px}
+.clear{align-self:flex-start;background:var(--paper);border:var(--line);border-radius:999px;padding:3px 14px;font-size:14px}
+
+footer{text-align:center;font-size:13px;color:var(--ink-soft)}
+
+/* 介面微互動 */
+@keyframes pop{0%{transform:scale(.94) translateY(10px)}60%{transform:scale(1.02) translateY(-3px)}100%{transform:none}}
+@keyframes tick{0%{transform:scale(.7)}60%{transform:scale(1.15)}100%{transform:none}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="主選單">
+  <div class="nav-in">
+    <a class="brand" href="#top">新加坡</a>
+    <a href="#flight">航班</a>
+    <a href="#plan">行程</a>
+    <a href="#stay">住宿</a>
+    <a href="#weather">天氣</a>
+    <a href="#prebudget">行前費用</a>
+    <a href="#expenses">記帳</a>
+    <a href="#todo">待辦</a>
+    <a href="#before">出發前</a>
+    <a href="#pack">行李</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- 首頁 -->
+  <header class="hero" id="top">
+    <div class="hero-illus">
+    <svg viewBox="0 0 360 220" role="img" aria-label="黃昏的新加坡濱海灣：魚尾獅、擎天樹、濱海灣金沙與河上小船插圖">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#FFE7B8"/>
+          <stop offset=".65" stop-color="#FFC9A3"/>
+          <stop offset="1" stop-color="#FFB09A"/>
+        </linearGradient>
+        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3CC2B4"/>
+          <stop offset="1" stop-color="#138A82"/>
+        </linearGradient>
+        <clipPath id="frame"><rect width="360" height="220"/></clipPath>
+      </defs>
+      <g clip-path="url(#frame)">
+        <rect width="360" height="220" fill="url(#sky)"/>
+        <!-- 夕陽與雲 -->
+        <circle cx="300" cy="126" r="40" fill="#FFE29A"/>
+        <circle cx="300" cy="126" r="28" fill="#FFD36B"/>
+        <g fill="#FFFFFF" opacity=".85">
+          <rect x="34" y="34" width="66" height="14" rx="7"/>
+          <rect x="56" y="24" width="40" height="14" rx="7"/>
+          <rect x="196" y="44" width="54" height="12" rx="6"/>
+          <rect x="214" y="35" width="30" height="12" rx="6"/>
+        </g>
+        <!-- 遠景城市剪影 -->
+        <g fill="#F2A08F" opacity=".75">
+          <rect x="120" y="128" width="16" height="46"/>
+          <rect x="138" y="114" width="12" height="60"/>
+          <rect x="152" y="134" width="18" height="40"/>
+          <rect x="172" y="120" width="12" height="54"/>
+          <rect x="288" y="138" width="14" height="36"/>
+          <rect x="304" y="126" width="12" height="48"/>
+          <rect x="318" y="142" width="20" height="32"/>
+        </g>
+        <g stroke="#1D2E2C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+          <!-- 濱海灣金沙（三塔＋空中花園） -->
+          <path fill="#FFFFFF" d="M206 174l3-78h14l2 78z"/>
+          <path fill="#FFFFFF" d="M230 174l3-82h14l3 82z"/>
+          <path fill="#FFFFFF" d="M255 174l2-78h14l3 78z"/>
+          <path fill="none" stroke-width="1.5" d="M216 104v62M240 100v66M264 104v62"/>
+          <path fill="#EF5080" d="M200 84h92q6 0 6 4l-3 5H202q-4 0-4-4z"/>
+          <g fill="#4CA66B" stroke-width="1.5">
+            <circle cx="212" cy="82" r="3"/><circle cx="234" cy="82" r="3"/><circle cx="258" cy="82" r="3"/><circle cx="280" cy="82" r="3"/>
+          </g>
+          <!-- 擎天樹 -->
+          <path fill="#4CA66B" d="M64 174l2-58h8l2 58z"/>
+          <path fill="#EF5080" d="M44 117q26-16 52 0q-26 7-52 0z"/>
+          <path fill="#4CA66B" d="M100 174l2-40h6l2 40z"/>
+          <path fill="#179B92" d="M86 135q19-11 38 0q-19 5-38 0z"/>
+          <path fill="#4CA66B" d="M34 174l1-28h5l1 28z"/>
+          <path fill="#FFB732" d="M24 147q13-8 26 0q-13 4-26 0z"/>
+          <path fill="none" stroke-width="1.5" d="M68 128v40M72 128v40M104 142v28"/>
+          <!-- 棕櫚樹 -->
+          <path fill="none" d="M344 176q-4-26 2-44"/>
+          <path fill="#4CA66B" d="M346 132q-16-8-26 2q14-2 26-2zM346 132q14-10 24-2q-13 0-24 2zM346 132q-8-14-20-12q12 4 20 12zM346 132q8-14 18-14q-10 6-18 14z"/>
+          <!-- 魚尾獅與底座 -->
+          <path fill="#FFF6E4" d="M134 174v-8h48v8z"/>
+          <path fill="#FFFFFF" d="M148 166q-6-14 2-26q6-8 16-6q8 4 8 14q0 10-8 18z"/>
+          <path fill="#FFFFFF" d="M150 166q-12-2-14-14q6 4 12 4"/>
+          <path fill="none" stroke-width="1.5" d="M154 158q3 3 6 0M160 150q3 3 6 0M154 148q3 3 6 0"/>
+          <circle cx="166" cy="128" r="13" fill="#FFB732"/>
+          <circle cx="167" cy="129" r="8.5" fill="#FFFFFF"/>
+          <circle cx="164.5" cy="127" r="1.3" fill="#1D2E2C" stroke="none"/>
+          <circle cx="170" cy="127" r="1.3" fill="#1D2E2C" stroke="none"/>
+          <path fill="#EF5080" stroke-width="1.5" d="M166 131h3l-1.5 2z"/>
+          <path fill="none" stroke="#FFFFFF" stroke-width="5" d="M175 132q20-6 28 42"/>
+          <path fill="none" stroke="#8EDBE4" stroke-width="2.5" d="M175 132q20-6 28 42"/>
+        </g>
+        <!-- 海灣 -->
+        <path fill="url(#sea)" stroke="#1D2E2C" stroke-width="2.5" d="M-4 174h368v50H-4z"/>
+        <g fill="#FFFFFF" opacity=".35">
+          <rect x="209" y="180" width="12" height="20" rx="3"/>
+          <rect x="234" y="180" width="12" height="24" rx="3"/>
+          <rect x="258" y="180" width="12" height="20" rx="3"/>
+          <rect x="286" y="182" width="28" height="4" rx="2"/>
+        </g>
+        <g stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity=".7">
+          <path d="M18 188h26M70 198h34M126 186h18M150 206h30M300 200h28M24 210h20"/>
+        </g>
+        <!-- 河上小船 -->
+        <g stroke="#1D2E2C" stroke-width="2.5" stroke-linejoin="round">
+          <path fill="#FFB732" d="M304 186h22l-2 7h-18z"/>
+          <path fill="#EF5080" d="M292 192h48l-6 10h-36z"/>
+          <path fill="none" stroke-width="1.5" d="M300 197h32"/>
+        </g>
+      </g>
+    </svg>
+    </div>
+    <div class="hero-body">
+      <p class="eyebrow">2027.03.30（二）– 04.05（一）・7 天 6 夜</p>
+      <h1>新加坡<span>繽紛獅城</span>親子手帖</h1>
+      <div class="count" aria-live="polite">
+        <div class="count-big" id="cdBig">--</div>
+        <div class="count-txt">
+          <span id="cdLabel">距離出發還有</span>
+          <span class="count-sub" id="cdSub"></span>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">一大一小親子行</span>
+        <span class="chip">首次初訪必去路線</span>
+        <span class="chip">全程大眾運輸</span>
+      </div>
+      <p class="note">行程以每日 2–3 個區域為原則，避開正午長時間戶外曝曬；環球影城與萬態動物世界各保留完整一天。</p>
+    </div>
+  </header>
+
+  <!-- 航班 -->
+  <section id="flight">
+    <h2 class="sec-title"><span class="dot" style="background:var(--magenta)"></span>航班</h2>
+    <div class="flights">
+      <article class="flight go">
+        <div class="flight-top"><span>去程</span><span>03/30（二）</span></div>
+        <div class="flight-mid">
+          <div class="port"><b>TPE</b><small>台北桃園 T1</small></div>
+          <div class="route"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#FFFFFF" stroke="#1D2E2C" stroke-width="3"/><path d="M8 14h10l-4-4M18 14l-4 4" fill="none" stroke="#1D2E2C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="port r"><b>SIN</b><small>新加坡樟宜 T3</small></div>
+        </div>
+        <div class="flight-bot">
+          <span class="flight-time">08:05 起飛 → 12:35 抵達</span>
+          <div class="tags">
+            <span class="tag t-air">CI753 中華航空</span>
+            <span class="tag t-walk">A350-900・經濟艙 N</span>
+            <span class="tag t-walk">飛行 4h30m</span>
+          </div>
+          <span class="note">傳統航空通常含托運行李（經濟艙常見每人 1 件 23kg），但 N、Q 是訂位艙等代碼，不代表實際托運額度，請以電子機票明細為準。</span>
+        </div>
+      </article>
+      <article class="flight back">
+        <div class="flight-top"><span>回程</span><span>04/05（一）</span></div>
+        <div class="flight-mid">
+          <div class="port"><b>SIN</b><small>新加坡樟宜 T3</small></div>
+          <div class="route"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#FFFFFF" stroke="#1D2E2C" stroke-width="3"/><path d="M8 14h10l-4-4M18 14l-4 4" fill="none" stroke="#1D2E2C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="port r"><b>TPE</b><small>台北桃園 T1</small></div>
+        </div>
+        <div class="flight-bot">
+          <span class="flight-time">13:45 起飛 → 18:35 抵達</span>
+          <div class="tags">
+            <span class="tag t-air">CI754 中華航空</span>
+            <span class="tag t-walk">A350-900・經濟艙 Q</span>
+            <span class="tag t-walk">飛行 4h50m</span>
+          </div>
+          <span class="note">建議 10:15 從飯店出發搭地鐵，11:00 前抵達 T3 辦理退稅與報到。</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 每日行程 -->
+  <section id="plan">
+    <h2 class="sec-title"><span class="dot" style="background:var(--saffron)"></span>每日行程</h2>
+    <div class="days" role="tablist" aria-label="選擇日期" id="dayTabs"></div>
+    <div class="legend" aria-label="交通標籤說明">
+      <span>交通：</span>
+      <span class="tag t-air">飛機</span>
+      <span class="tag t-mrt">地鐵 MRT</span>
+      <span class="tag t-bus">公車</span>
+      <span class="tag t-mono">聖淘沙捷運</span>
+      <span class="tag t-walk">步行</span>
+    </div>
+    <div class="day-panel" id="dayPanel" role="tabpanel" tabindex="0"></div>
+
+    <!-- 夜間點燈／限定活動／市集 -->
+    <div class="card events-card">
+      <h3 style="font-size:20px;margin-bottom:4px">夜間點燈・限定活動・特色市集（03/30–04/05）</h3>
+      <p class="note" style="margin-bottom:8px">新加坡全年常設免費夜間燈光秀每天都有，搭配週末限定的文化街區：</p>
+
+      <div class="event-item">
+        <div class="event-head"><b>濱海灣花園「花園狂想曲」燈光秀</b><span class="rec-tag">最推薦</span></div>
+        <div class="event-meta">地點：Supertree Grove 擎天樹叢｜每日 19:45、20:45（每場約 15 分）｜免費｜建議停留 45 分鐘</div>
+        <div class="event-desc">擎天樹隨音樂變換燈光色彩，躺在樹下仰望超夢幻，親子必看！已排入 Day 2 晚上。</div>
+        <div><a class="map-link" style="font-size:13px" href="https://www.gardensbythebay.com.sg/en/things-to-do/calendar-of-events/garden-rhapsody.html" target="_blank" rel="noopener">官方節目資訊</a></div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-head"><b>濱海灣金沙「幻彩生輝」水舞光影秀</b><span class="rec-tag">最推薦</span></div>
+        <div class="event-meta">地點：Event Plaza 戶外水岸廣場｜週日至週四 20:00、21:00；週五六加開 22:00（每場約 15 分）｜免費｜建議停留 30 分鐘</div>
+        <div class="event-desc">結合噴泉水幕、雷射與交響樂。Day 2 先看 19:45 擎天樹，再走過去接 21:00 水舞秀，兩場串聯不衝突。</div>
+        <div><a class="map-link" style="font-size:13px" href="https://www.marinabaysands.com/attractions/spectra.html" target="_blank" rel="noopener">官方節目資訊</a></div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-head"><b>星耀樟宜「雨漩渦」燈光音樂秀</b></div>
+        <div class="event-meta">地點：Jewel Changi Airport 森林谷｜每晚 20:00、21:00（週末加場）｜免費｜約 5 分鐘</div>
+        <div class="event-desc">Day 1 中午抵達先看白天瀑布已很震撼；回程是白天航班，夜間場不強求，不必特地折返機場。</div>
+        <div><a class="map-link" style="font-size:13px" href="https://www.jewelchangiairport.com/en/attractions/rain-vortex.html" target="_blank" rel="noopener">官方景點介紹</a></div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-head"><b>聖淘沙「時光之翼」海上水舞煙火秀</b></div>
+        <div class="event-meta">地點：Siloso Beach 西樂索海灘｜每晚 19:40、20:40（每場約 20 分）｜需購票（標準座約 SGD 22 起）</div>
+        <div class="event-desc">Day 3 聖淘沙玩到傍晚若還有體力可加購；累了就直接回市區，不勉強。</div>
+        <div><a class="map-link" style="font-size:13px" href="https://www.mountfaberleisure.com/attraction/wings-of-time/" target="_blank" rel="noopener">官方購票資訊</a></div>
+      </div>
+
+      <div class="event-item">
+        <div class="event-head"><b>甘榜格南週末街區・老巴剎沙嗲夜市</b></div>
+        <div class="event-meta">地點：Haji Lane 哈芝巷周邊（週末人潮最旺）／老巴剎沙嗲街（每晚 19:00 後封街）｜免費逛街</div>
+        <div class="event-desc">老巴剎已排入 Day 1 晚餐；哈芝巷彩繪街排在 Day 6（週日）上午。</div>
+        <div><a class="map-link" style="font-size:13px" href="https://www.visitsingapore.com/see-do-singapore/places-to-see/kampong-gelam/" target="_blank" rel="noopener">新加坡旅遊局介紹</a></div>
+      </div>
+      <p class="note" style="margin-top:6px">以上為目前官方公告的常態場次，非 2027 年特別版；出發前 1–2 個月請到官網或 <a class="map-link" href="https://experience.sg/whats-on" target="_blank" rel="noopener">新加坡日期限定活動</a> 再核對一次。</p>
+    </div>
+  </section>
+
+  <!-- 住宿 -->
+  <section id="stay">
+    <h2 class="sec-title"><span class="dot" style="background:var(--teal)"></span>住宿</h2>
+    <div class="card">
+      <h3 style="font-size:21px">米梧槽酒店</h3>
+      <p class="note">Hotel Mi Rochor</p>
+      <dl class="stay-grid">
+        <dt>入住</dt><dd>03/30（二）15:00 以後</dd>
+        <dt>退房</dt><dd>04/05（一）11:00 以前，共 6 晚</dd>
+        <dt>房型</dt><dd>高級雙床房 ×1 間，2 張單人床（一大一小入住）</dd>
+        <dt>早餐</dt><dd>未提供資訊，先以不含早餐規劃（周邊亞坤、熟食中心很方便）</dd>
+        <dt>電話</dt><dd>+65-6669-8822</dd>
+        <dt>地址</dt><dd>89 Short St, Singapore 188216</dd>
+        <dt>交通</dt><dd>地鐵藍線 DT13 Rochor 梧槽站步行約 2–5 分鐘；小印度、武吉士都在步行 8–10 分鐘內。</dd>
+      </dl>
+      <a class="maplink-pill" href="https://www.google.com/maps/dir/?api=1&amp;destination=Hotel%20Mi%20Rochor%20Singapore&amp;travelmode=transit" target="_blank" rel="noopener"><svg class="pin" viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Google 地圖導航</a>
+    </div>
+  </section>
+
+  <!-- 當地天氣 -->
+  <section id="weather">
+    <h2 class="sec-title"><span class="dot" style="background:var(--teal)"></span>當地天氣</h2>
+    <div class="card">
+      <p>新加坡全年高溫潮濕，3–4 月白天約 32°C，午後雷陣雨機率不低。</p>
+      <div class="weather-grid">
+        <div class="weather-box"><b>3 月</b><small>平均 27.8°C</small><small>日高 32.2°C／日低 24.9°C</small><small>月雨量 151.7mm・雨日約 12 天</small></div>
+        <div class="weather-box alt"><b>4 月</b><small>平均 28.2°C</small><small>日高 32.4°C／日低 25.3°C</small><small>月雨量 164.3mm・雨日約 15 天</small></div>
+      </div>
+      <p class="note">資料：新加坡氣象署 1991–2020 氣候平年值（非旅行當週預報）。日落約 19:10，19:30 後才全黑。室內冷氣極強，幫小孩帶薄外套，並必備晴雨兩用摺疊傘。</p>
+      <div class="budget-list">
+        <div class="budget-row"><div class="name">新加坡氣象署即時天氣<small>含雷達與 4 日預報</small></div><div class="amt"><a class="map-link" href="https://www.weather.gov.sg/home/" target="_blank" rel="noopener">查看</a></div></div>
+        <div class="budget-row"><div class="name">新加坡氣象署 2 小時預報<small>出門前看哪一區要下雨</small></div><div class="amt"><a class="map-link" href="https://www.weather.gov.sg/weather-2hr-forecast/" target="_blank" rel="noopener">查看</a></div></div>
+        <div class="budget-row"><div class="name">AccuWeather 新加坡<small>出發前一週看降雨機率</small></div><div class="amt"><a class="map-link" href="https://www.accuweather.com/zh/sg/singapore/300597/daily-weather-forecast/300597" target="_blank" rel="noopener">查看</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 行前費用 -->
+  <section id="prebudget">
+    <h2 class="sec-title"><span class="dot" style="background:var(--teal)"></span>行前費用</h2>
+    <div class="card">
+      <div class="tabs" role="tablist" aria-label="費用分類">
+        <button class="tab-btn" type="button" role="tab" aria-selected="true" data-costtab="known">已知／已訂（TWD）</button>
+        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-costtab="estimate">景點票價參考（SGD）</button>
+      </div>
+      <div class="tabbody" id="costBody"></div>
+    </div>
+  </section>
+
+  <!-- 記帳 -->
+  <section id="expenses">
+    <h2 class="sec-title"><span class="dot" style="background:var(--jade)"></span>當地記帳（新幣 SGD）</h2>
+    <div class="card">
+      <p class="note">依收據逐筆新增，會自動按日期分組與加總；資料只存在這台裝置的瀏覽器裡。</p>
+      <div class="formrow">
+        <input id="expDate" type="date" min="2027-03-30" max="2027-04-05" aria-label="花費日期">
+        <input id="expName" type="text" placeholder="項目／品名" aria-label="花費項目">
+        <input id="expAmount" type="number" min="0" step="0.01" placeholder="金額 SGD" aria-label="金額">
+        <select id="expType" aria-label="分類"><option>餐飲</option><option>交通</option><option>門票</option><option>購物</option><option>其他</option></select>
+        <button class="wide" id="addExp" type="button">新增一筆</button>
+      </div>
+      <div id="expList" style="margin-top:12px"></div>
+    </div>
+  </section>
+
+  <!-- 待辦 -->
+  <section id="todo">
+    <h2 class="sec-title"><span class="dot" style="background:var(--jade)"></span>待辦清單</h2>
+    <div class="card" data-list="todo"></div>
+  </section>
+
+  <!-- 出發前 -->
+  <section id="before">
+    <h2 class="sec-title"><span class="dot" style="background:var(--magenta)"></span>出發前清單</h2>
+    <div class="card" data-list="before"></div>
+  </section>
+
+  <!-- 行李 -->
+  <section id="pack">
+    <h2 class="sec-title"><span class="dot" style="background:var(--saffron)"></span>行李清單</h2>
+    <div class="card" data-list="pack"></div>
+    <button class="clear" id="clearAll" type="button">清除所有打勾</button>
+  </section>
+
+  <footer>打勾與記帳紀錄只存在這台裝置的瀏覽器裡。票價、班次與演出時刻可能調整，出發前請再確認官方公告。</footer>
+</main>
+
+<script>
+(function(){
+  var S='stroke="#1D2E2C" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"';
+  var PIN='<svg class="pin" viewBox="0 0 24 24" aria-hidden="true" width="13" height="13"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
+  var LINKICON='<svg class="pin" viewBox="0 0 24 24" aria-hidden="true" width="13" height="13"><path fill="currentColor" d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zM5 5h5V3H3v7h2V5zm0 9H3v7h7v-2H5v-5zm14 5h-5v2h7v-7h-2v5z"/></svg>';
+  function mapHref(q){return 'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(q)+'&travelmode=transit'}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  var ICON={
+    plane:'<svg viewBox="0 0 48 48" aria-hidden="true"><g '+S+'><path fill="#179B92" d="M26 26l-8 14h7l11-13z"/><path fill="#FFFFFF" d="M8 20h28q8 0 8 4t-8 4H14q-6 0-6-8z"/><path fill="#EF5080" d="M8 20l-3-10h6l7 10z"/></g></svg>',
+    tree:'<svg viewBox="0 0 48 48" aria-hidden="true"><g '+S+'><path fill="none" d="M24 42V20"/><path fill="#4CA66B" d="M24 20Q10 10 6 22q11-2 18-2zM24 20Q38 10 42 22q-11-2-18-2z"/><path fill="#EF5080" d="M24 20Q13 6 13 15q6 3 11 5zM24 20Q35 6 35 15q-6 3-11 5z"/><circle cx="24" cy="20" r="4.5" fill="#FFB732"/></g></svg>',
+    globe:'<svg viewBox="0 0 48 48" aria-hidden="true"><g '+S+'><circle cx="24" cy="22" r="14" fill="#179B92"/><path fill="#4CA66B" d="M16 15q6 2 8 6t-4 8q-6-2-6-8t2-6zM28 14q5 3 4 9t-6 4q-2-5 2-13z"/><path fill="#FFB732" d="M12 42h24l-4-6H16z"/><path fill="none" stroke="#EF5080" d="M8 28q16 6 32-8"/></g></svg>',
+    zoo:'<svg viewBox="0 0 48 48" aria-hidden="true"><g '+S+'><circle cx="14" cy="14" r="5" fill="#1D2E2C"/><circle cx="34" cy="14" r="5" fill="#1D2E2C"/><circle cx="24" cy="26" r="14" fill="#FFFFFF"/><ellipse cx="18" cy="24" rx="3.5" ry="4.5" fill="#1D2E2C"/><ellipse cx="30" cy="24" rx="3.5" ry="4.5" fill="#1D2E2C"/><circle cx="18" cy="23" r="1" fill="#FFFFFF" stroke="none"/><circle cx="30" cy="23" r="1" fill="#FFFFFF" stroke="none"/><path fill="#EF5080" d="M21 30h6l-3 3.5z"/></g></svg>',
+    culture:'<svg viewBox="0 0 48 48" aria-hidden="true"><g '+S+'><rect x="8" y="18" width="32" height="24" rx="4" fill="#EF5080"/><path fill="#FFB732" d="M6 18l18-11l18 11z"/><rect x="19" y="28" width="10" height="14" fill="#FFF6E4"/><rect x="12" y="23" width="6" height="6" fill="#179B92"/><rect x="30" y="23" width="6" height="6" fill="#179B92"/></g></svg>',
+    merlion:'<svg viewBox="0 0 48 48" aria-hidden="true"><g '+S+'><path fill="#FFB732" d="M12 26q-4-8 2-14q5-4 10-2q5-2 10 2q6 6 2 14z"/><circle cx="24" cy="24" r="9" fill="#FFFFFF"/><circle cx="21" cy="22" r="1.5" fill="#1D2E2C" stroke="none"/><circle cx="27" cy="22" r="1.5" fill="#1D2E2C" stroke="none"/><path fill="#EF5080" d="M22 26h4l-2 2.5z"/><path fill="#179B92" d="M6 38q9-4 18 0t18 0v6H6z"/></g></svg>',
+    bag:'<svg viewBox="0 0 48 48" aria-hidden="true"><g '+S+'><path fill="#FFB732" d="M8 16h32l-3 28H11z"/><path fill="none" d="M17 20v-6q0-8 7-8t7 8v6"/><path fill="#EF5080" stroke-width="2" d="M24 36q-7-4-6-8q1-4 6-1q5-3 6 1q1 4-6 8z"/></g></svg>'
+  };
+
+  /* 7 天相鄰顏色錯開：teal → magenta → saffron → jade → teal → magenta → saffron */
+  var DAYS=[
+    {d:'03/30',w:'二',n:30,title:'抵達獅城＋星耀樟宜＋老巴剎',sub:'機場室內瀑布開啟旅程，晚上大啖沙嗲',icon:'plane',bg:'--teal',stops:[
+      {t:'12:35',name:'抵達樟宜機場 T3',desc:'出發前 3 天內填妥 SG Arrival Card，可走自動通關。領行李後沿連通道前往星耀樟宜，大件行李可先寄放在 Jewel 行李寄存處或直接推著逛。',map:'Changi Airport Terminal 3',tags:[['air','CI753 抵達']]},
+      {t:'13:15',name:'星耀樟宜 Jewel（雨漩渦瀑布）',must:1,desc:'40 公尺室內瀑布與森林谷免費參觀！在 B2 美食街吃午餐；頂樓星空花園（Canopy Park）成人約 SGD 8、兒童約 SGD 6，視體力加購。',map:'Jewel Changi Airport',info:'https://www.jewelchangiairport.com/',tags:[['walk','步行約 8 分']]},
+      {t:'15:00',name:'地鐵前往米梧槽酒店 Check-in',must:1,desc:'樟宜機場站搭綠線（CG 支線）往 Expo，轉藍線 Downtown Line 到 Rochor 站，約 40–50 分鐘。7 歲以下兒童搭地鐵免費。入住後先補水休息。',map:'Hotel Mi Rochor Singapore',tags:[['mrt','地鐵約 45 分'],['walk','步行約 3 分']]},
+      {t:'17:30',name:'武吉士街・白沙浮廣場散步',flex:'視體力',desc:'飯店步行約 8 分鐘，順便買明天的水果與零食，熟悉周邊。',map:'Bugis Street Singapore',tags:[['walk','步行約 8 分']]},
+      {t:'19:00',name:'老巴剎沙嗲街晚餐',must:1,desc:'藍線至 Downtown 站步行約 4 分鐘。晚上 7 點後 Boon Tat Street 封街變身露天沙嗲夜市，點綜合沙嗲配甘蔗汁超有氣氛！',map:'Lau Pa Sat Singapore',info:'https://www.laupasat.sg/',tags:[['mrt','地鐵藍線 10 分'],['walk','步行約 4 分']]}
+    ]},
+    {d:'03/31',w:'三',n:31,title:'魚尾獅＋濱海灣花園＋雙燈光秀',sub:'早上拍明信片地標，下午躲進冷室，晚上連看兩場秀',icon:'tree',bg:'--magenta',stops:[
+      {t:'09:00',name:'魚尾獅公園 Merlion Park',must:1,desc:'早上順光、人少，拍經典「接水」借位照，對岸就是金沙酒店。免費開放。搭藍線到 Downtown 站或紅綠線到 Raffles Place 站步行約 8 分。',map:'Merlion Park Singapore',info:'https://www.visitsingapore.com/see-do-singapore/recreation-leisure/viewpoints/merlion-park/',tags:[['mrt','地鐵約 10 分'],['walk','步行約 8 分']]},
+      {t:'10:00',name:'沿海灣步道走到金沙・螺旋橋',desc:'經濱海藝術中心「榴槤殼」與螺旋橋散步到金沙，公共空間免費。太熱就提早進 The Shoppes 商場吹冷氣。',map:'Helix Bridge Singapore',tags:[['walk','步行約 20 分']]},
+      {t:'11:30',name:'金沙購物中心美食廣場午餐',desc:'The Shoppes B2 美食街有冷氣，推薦海南雞飯或肉骨茶，正午讓小孩休息避曬。',map:'Rasapura Masters Marina Bay Sands',tags:[['walk','步行約 5 分']]},
+      {t:'13:30',name:'濱海灣花園雙冷室（花穹＋雲霧林）',must:1,desc:'冷室約 23–25°C，最熱時段躲進來剛好；雲霧林一進門就是 35 公尺室內瀑布，兩館各抓 1–1.5 小時。外國旅客套票成人約 SGD 46、兒童（3–12）約 SGD 32（依特展浮動），先買電子票掃碼入園，並確認當日非維護休館日。',map:'Gardens by the Bay Cloud Forest',info:'https://www.gardensbythebay.com.sg/en/plan-your-visit/opening-hours.html',tags:[['walk','經天橋步行約 10 分']]},
+      {t:'17:30',name:'OCBC Skyway 空中步道',flex:'視時間',desc:'走在 22 公尺高的擎天樹之間看夕陽。成人約 SGD 14、兒童（3–12）約 SGD 10；遇雨或雷電暫停。也可直接在樹叢下野餐休息等燈光秀。',map:'OCBC Skyway',tags:[['walk','步行約 5 分']]},
+      {t:'19:45',name:'花園狂想曲燈光秀（Supertree Grove）',must:1,desc:'免費、約 15 分鐘。19:30 前找好樹下位置，坐著或躺著仰望最舒服。',map:'Supertree Grove Gardens by the Bay',info:'https://www.gardensbythebay.com.sg/en/things-to-do/calendar-of-events/garden-rhapsody.html',tags:[['walk','步行約 2 分']]},
+      {t:'21:00',name:'金沙「幻彩生輝」水舞光影秀',flex:'視體力',desc:'看完擎天樹後穿過金沙購物中心到戶外水岸廣場，接上 21:00 免費水舞秀（約 15 分）。看完從 Bayfront 站搭藍線直達 Rochor，回飯店超方便。',map:'Event Plaza Marina Bay Sands',info:'https://www.marinabaysands.com/attractions/spectra.html',tags:[['walk','步行約 12 分'],['mrt','地鐵藍線 12 分']]}
+    ]},
+    {d:'04/01',w:'四',n:1,title:'聖淘沙・環球影城全日',sub:'把整天留給孩子最期待的主題樂園',icon:'globe',bg:'--saffron',stops:[
+      {t:'09:00',name:'前往怡豐城 VivoCity 轉聖淘沙捷運',must:1,desc:'Rochor 搭藍線至 Little India 轉紫線到 HarbourFront（約 25 分），上 VivoCity 3 樓搭 Sentosa Express 到 Resorts World 站，刷卡即可進島。',map:'VivoCity Sentosa Express Station',tags:[['mrt','地鐵約 25 分'],['mono','聖淘沙捷運 5 分']]},
+      {t:'10:00',name:'新加坡環球影城 Universal Studios',must:1,desc:'週四平日人比週末少。先衝熱門設施（變形金剛 3D、侏羅紀、小小兵樂園），再慢慢逛。門票依日期浮動，非尖峰起價成人約 SGD 76、兒童（4–12）約 SGD 69；購票前查好身高限制與設施維修公告。',map:'Universal Studios Singapore',info:'https://www.rwsentosa.com/en/attractions/universal-studios-singapore',tags:[['walk','步行約 3 分']]},
+      {t:'12:00',name:'園區內午餐',desc:'錯開 11:30–13:00 尖峰，可提早或晚點吃，排隊時間差很多。',map:'Universal Studios Singapore',tags:[['walk','園內步行']]},
+      {t:'16:00',name:'S.E.A. 海洋館',flex:'視體力',desc:'若提早出園就在隔壁，超巨型海底觀景窗讓小孩看到入迷（成人約 SGD 44、兒童約 SGD 33）。累了就跳過，不硬塞付費景點。',map:'S.E.A. Aquarium Singapore',info:'https://www.rwsentosa.com/en/attractions/sea-aquarium',tags:[['walk','步行約 4 分']]},
+      {t:'18:30',name:'回 VivoCity 晚餐後返回飯店',desc:'搭聖淘沙捷運出島（出島免費），在 VivoCity 美食街吃晚餐，再搭紫線轉藍線回飯店早點休息，明天是動物園日。',map:'VivoCity Singapore',tags:[['mono','聖淘沙捷運 5 分'],['mrt','地鐵約 25 分']]}
+    ]},
+    {d:'04/02',w:'五',n:2,title:'萬態野生動物世界（河川生態園＋夜間動物園）',sub:'看大熊貓、坐遊船，天黑再搭遊園車探險',icon:'zoo',bg:'--jade',stops:[
+      {t:'09:30',name:'睡飽飽・亞坤咖椰吐司早餐',desc:'昨天玩了一整天，今天早上不趕！步行到 Bugis 吃「咖椰吐司＋半熟蛋＋美祿」國民早餐。',map:'Ya Kun Kaya Toast Bugis Junction',tags:[['walk','步行約 8 分']]},
+      {t:'12:30',name:'地鐵＋Mandai 接駁車前往園區',desc:'搭地鐵至 Khatib 站（NS14），轉乘 Mandai Khatib Shuttle 接駁車直達園區（約 15–20 分，約每 15 分一班，7 歲以上單程約 SGD 2.5）。別搭成繞路的一般公車。',map:'Khatib MRT Station',info:'https://www.mandai.com/en/plan-your-visit/getting-to-and-around/getting-to-mandai-wildlife-reserve.html',tags:[['mrt','地鐵約 40 分'],['bus','Mandai 接駁車 15 分']]},
+      {t:'13:30',name:'河川生態園 River Wonders',must:1,desc:'大部分步道有遮蔽，不怕午後雷雨。看大熊貓、海牛館，還能搭亞馬遜河探索船（有身高限制，以現場公告為準）。建議買「河川生態園＋夜間動物園」雙園套票（目前參考成人約 SGD 98、兒童約 SGD 70），購票前確認可同日使用。',map:'River Wonders Singapore',info:'https://www.mandai.com/en/river-wonders.html',tags:[['walk','步行約 3 分']]},
+      {t:'17:30',name:'園區內晚餐・休息',desc:'在夜間動物園入口旁餐廳吃晚餐，讓小孩充電、補水，等天黑入園。',map:'Night Safari Singapore',tags:[['walk','步行約 5 分']]},
+      {t:'19:15',name:'夜間野生動物園 Night Safari',must:1,desc:'全球首座夜間動物園！先搭遊園車看夜行動物，再看「夜晚的精靈」動物秀（座位需提前上官網預約）。單買成人約 SGD 58、兒童約 SGD 41，以官網為準。',map:'Night Safari Singapore',info:'https://www.mandai.com/en/night-safari.html',tags:[['walk','步行約 1 分']]},
+      {t:'21:30',name:'接駁車轉地鐵回飯店',desc:'小孩通常已經很睏，回程約 60 分鐘。若太累，可在園區排 Grab（選 GrabFamily 有兒童座椅）直接回飯店。',map:'Hotel Mi Rochor Singapore',tags:[['bus','Mandai 接駁車 15 分'],['mrt','地鐵約 40 分']]}
+    ]},
+    {d:'04/03',w:'六',n:3,title:'牛車水＋國家博物館＋克拉碼頭',sub:'熟食中心吃美食、冷氣博物館避暑，傍晚河畔散步',icon:'merlion',bg:'--teal',stops:[
+      {t:'10:00',name:'牛車水 Chinatown・佛牙寺龍華院',must:1,desc:'藍線直達 Chinatown 站。逛寶塔街買伴手禮、參觀免費開放的佛牙寺（大殿需著過膝衣物，門口可借沙龍）。',map:'Buddha Tooth Relic Temple Singapore',info:'https://www.btrts.org.sg/',tags:[['mrt','地鐵藍線 8 分'],['walk','步行約 5 分']]},
+      {t:'11:30',name:'麥士威熟食中心午餐（天天海南雞飯）',must:1,desc:'佛牙寺正對面！天天海南雞飯、老伴豆花、金華魚片米粉。週六人多，11:30 前到可少排隊；記得帶現金與面紙。',map:'Maxwell Food Centre',tags:[['walk','步行約 2 分']]},
+      {t:'13:30',name:'新加坡國家博物館',flex:'視情況',desc:'最熱的下午躲進冷氣博物館，互動展區小孩也看得下去（每日 10:00–19:00；非居民成人約 SGD 20、6 歲以下免費）。停留 1.5–2 小時。',map:'National Museum of Singapore',info:'https://www.nhb.gov.sg/nationalmuseum/plan-your-visit/visitor-information/admissions',tags:[['mrt','地鐵約 10 分'],['walk','步行約 6 分']]},
+      {t:'16:00',name:'福康寧公園散步',flex:'可彈性跳過',desc:'就在博物館後方，綠意與殖民時期建築，傍晚涼一點適合走走。',map:'Fort Canning Park',tags:[['walk','步行約 5 分']]},
+      {t:'17:30',name:'克拉碼頭河畔・松發肉骨茶晚餐',must:1,desc:'彩色倉庫街傍晚超好拍。晚餐吃必比登推薦「松發肉骨茶」（胡椒排骨湯可續），小孩可點滷豬腳或青菜。可自費搭新加坡河遊船（約 40 分，成人約 SGD 28、兒童約 SGD 18）。',map:'Song Fa Bak Kut Teh Clarke Quay',info:'https://songfa.com.sg/',tags:[['walk','步行約 10 分']]}
+    ]},
+    {d:'04/04',w:'日',n:4,title:'小印度＋甘榜格南＋烏節路採買',sub:'飯店走路就到的繽紛街區，下午百貨補貨',icon:'culture',bg:'--magenta',stops:[
+      {t:'09:30',name:'小印度 Little India・陳東齡故居',must:1,desc:'飯店步行即達！彩虹般鮮豔的印度富商故居、竹腳中心與花環攤位，免費街區漫步。週日早上人潮較少。',map:'House of Tan Teng Niah',tags:[['walk','步行約 8 分']]},
+      {t:'11:00',name:'甘榜格南・蘇丹回教堂＆哈芝巷',must:1,desc:'金色圓頂的蘇丹回教堂（非祈禱時段開放參觀，需著長袖長褲或借外袍）；旁邊哈芝巷滿牆彩繪塗鴉超適合親子拍照，午餐在阿拉伯街吃烤餅或馬來料理。',map:'Sultan Mosque Singapore',info:'https://sultanmosque.sg/',tags:[['walk','步行約 15 分']]},
+      {t:'14:00',name:'烏節路 Orchard Road（ION／高島屋）',must:1,desc:'百貨吹冷氣逛街，挑 2–3 間就好。超市可買斑蘭蛋糕、叻沙泡麵、肉骨茶包；單店滿 SGD 100 記得索取退稅單。',map:'ION Orchard Singapore',tags:[['mrt','地鐵約 15 分']]},
+      {t:'18:00',name:'回飯店整理行李・周邊晚餐',flex:'視體力',desc:'早點回飯店打包戰利品，把退稅單、護照收進隨身包。晚餐在小印度或武吉士附近解決。',map:'Hotel Mi Rochor Singapore',tags:[['mrt','地鐵約 15 分']]}
+    ]},
+    {d:'04/05',w:'一',n:5,title:'退房回家・樟宜機場最後巡禮',sub:'預留充足時間辦退稅，帶滿滿回憶回台北',icon:'bag',bg:'--saffron',stops:[
+      {t:'09:00',name:'早餐・最後確認行李・退房',must:1,desc:'11:00 前退房；13:45 班機，建議 10:15 前出發最從容。',map:'Hotel Mi Rochor Singapore',tags:[['walk','步行約 3 分']]},
+      {t:'10:15',name:'地鐵前往樟宜機場 T3',desc:'Rochor 搭藍線到 Expo，轉機場支線到 Changi Airport 站，約 40–50 分鐘。',map:'Changi Airport Terminal 3',tags:[['mrt','地鐵約 45 分']]},
+      {t:'11:00',name:'電子退稅（eTRS）＋華航報到',must:1,desc:'若有退稅品要託運，務必先在出境大廳 eTRS 自助機辦完再託運！接著到華航櫃檯報到（班機前 3 小時內辦好最安心）。',map:'Changi Airport Terminal 3',info:'https://www.changiairport.com/',tags:[['walk','步行約 5 分']]},
+      {t:'12:00',name:'管制區內逛逛・買斑蘭蛋糕',desc:'Bengawan Solo 斑蘭戚風蛋糕是最經典伴手禮，帶上飛機剛好。登機前讓小孩在兒童遊戲區放電。',map:'Bengawan Solo Changi Airport T3',tags:[['walk','步行約 5 分']]},
+      {t:'13:45',name:'CI754 起飛返台',must:1,desc:'飛行約 4 小時 50 分，18:35 抵達桃園 T1，平安回家！',map:'Taiwan Taoyuan International Airport Terminal 1',tags:[['air','飛機 4h50m']]}
+    ]}
+  ];
+
+  var LISTS={
+    todo:{title:'訂位與行前確認',groups:[{items:[
+      ['購買景點電子門票（官網／Klook／KKday）','環球影城（指定 04/01）、濱海灣花園雙冷室、Mandai 河川生態園＋夜間動物園雙園套票'],
+      ['確認 Mandai 雙園套票可同日使用並預約入園時段','夜間動物園建議 19:15 場'],
+      ['預約夜間動物園「夜晚的精靈」動物秀座位','依官網開放時間預約'],
+      ['確認環球影城設施身高限制與維修公告'],
+      ['確認濱海灣花園 03/31 非維護休館日、燈光秀場次'],
+      ['確認米梧槽酒店訂房明細、床型與早餐','入住 03/30 15:00 後、退房 04/05 11:00 前'],
+      ['確認華航兩段航班托運行李額度','N、Q 為訂位艙等，額度以電子機票為準'],
+      ['下載 App：MyICA、Google Maps、Grab、MyTransport.SG','叫車帶小孩選 GrabFamily（有兒童座椅）'],
+      ['出發前 48 小時線上報到與選位']
+    ]}]},
+    before:{title:'出發前一週',groups:[{items:[
+      ['填寫 SG Arrival Card 電子入境卡','抵達前 3 天內（含當天）於 MyICA App 或官網免費填寫，一大一小都要填'],
+      ['護照效期確認','須有 6 個月以上效期，拍照存手機備份'],
+      ['換新加坡幣','地鐵與百貨可刷感應式信用卡，備約 SGD 200–300 現金給熟食中心'],
+      ['開通網卡 / 安裝 eSIM'],
+      ['電子機票、訂房單、景點 QR Code 存離線相簿'],
+      ['信用卡開通海外交易'],
+      ['確認旅遊平安險＋不便險'],
+      ['查詢新加坡氣象署 7 日預報']
+    ]}]},
+    pack:{title:'一大一小行李（四季如夏＋冷氣超強）',groups:[
+      {name:'證件與金錢',items:[['護照（一大一小）'],['新加坡幣現金、感應式信用卡'],['電子機票與訂房憑證']]},
+      {name:'衣物（約 25–32°C，室內冷氣強）',items:[['透氣短袖、短褲／洋裝（5–6 套，流汗易換洗）'],['輕薄外套（冷室、地鐵、百貨必備）'],['好走的運動鞋或涼鞋'],['遮陽帽、太陽眼鏡'],['泳衣（飯店泳池或海灘戲水）']]},
+      {name:'親子與隨身小物',items:[['晴雨兩用摺疊傘或輕便雨衣'],['隨身水壺（自來水可生飲，景點有飲水機）'],['防蚊液、防曬乳'],['兒童常備藥、OK 繃'],['濕紙巾、面紙（熟食中心不提供紙巾）'],['孩子的小背包與簡單零食'],['輕便摺疊購物袋']]},
+      {name:'電器（英規 G 型插頭）',items:[['英規三孔轉接頭（230V，一般充電器只需轉接頭）'],['手機、充電線、多孔充電器'],['行動電源（只能放隨身行李，不可託運）']]}
+    ]}
+  };
+
+  /* ---------- 出發倒數 ---------- */
+  var START=new Date('2027-03-30T00:00:00+08:00').getTime();
+  var END=new Date('2027-04-06T00:00:00+08:00').getTime();
+  var cdBig=document.getElementById('cdBig'),cdLabel=document.getElementById('cdLabel'),cdSub=document.getElementById('cdSub');
+  function tick(){
+    var now=Date.now();
+    if(now<START){
+      var ms=START-now,d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);
+      cdBig.textContent=d;
+      cdLabel.textContent='天後出發';
+      cdSub.textContent='還有 '+d+' 天 '+h+' 小時 '+m+' 分（2027/03/30 起算）';
+    }else if(now<END){
+      var n=Math.floor((now-START)/864e5)+1;
+      cdBig.textContent='Day '+n;
+      cdLabel.textContent='獅城旅程進行中';
+      cdSub.textContent='今天是第 '+n+' 天，祝一大一小玩得開心！';
+    }else{
+      cdBig.textContent='完';
+      cdLabel.textContent='旅程圓滿結束';
+      cdSub.textContent='滿滿回憶，歡迎回家';
+    }
+  }
+  tick();setInterval(tick,30000);
+
+  /* ---------- 每日行程切換＋單軌小列車 ---------- */
+  var tabs=document.getElementById('dayTabs'),panel=document.getElementById('dayPanel'),cur=0;
+  var MONO_SVG='<svg viewBox="0 0 64 30" width="52" height="24" aria-hidden="true"><g stroke="#1D2E2C" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path fill="#FFB732" d="M6 6h44q10 0 10 10t-10 10H6q-4 0-4-4V10q0-4 4-4z"/><path fill="none" stroke="#EF5080" stroke-width="3" d="M3 20h55"/><g fill="#FFFFFF" stroke-width="2"><circle cx="14" cy="14" r="4"/><circle cx="26" cy="14" r="4"/><circle cx="38" cy="14" r="4"/></g><path fill="#179B92" d="M50 10q6 1 7 6h-7z"/></g></svg>';
+  tabs.innerHTML=DAYS.map(function(d,i){
+    var mLabel=d.n>=30?'3 月':'4 月';
+    return '<button class="day-btn" type="button" role="tab" id="tab'+i+'" aria-controls="dayPanel" data-i="'+i+'"><small>'+mLabel+'</small><b>'+d.n+'</b><small>週'+d.w+'</small></button>';
+  }).join('')+'<div class="day-rail" id="dayRail" aria-hidden="true"></div><div class="day-mono" id="dayMono" aria-hidden="true">'+MONO_SVG+'</div>';
+
+  var dayBtns=tabs.querySelectorAll('.day-btn'),dayRail=document.getElementById('dayRail'),dayMono=document.getElementById('dayMono');
+  function layoutMono(i){
+    var first=dayBtns[0],last=dayBtns[dayBtns.length-1],btn=dayBtns[i];
+    var railLeft=first.offsetLeft+first.offsetWidth/2;
+    var railRight=last.offsetLeft+last.offsetWidth/2;
+    dayRail.style.left=railLeft+'px';
+    dayRail.style.width=Math.max(0,railRight-railLeft)+'px';
+    dayMono.style.left=(btn.offsetLeft+btn.offsetWidth/2)+'px';
+  }
+  function renderDay(i,animate){
+    cur=i;var d=DAYS[i];
+    Array.prototype.forEach.call(dayBtns,function(b,k){
+      b.setAttribute('aria-selected',k===i?'true':'false');b.tabIndex=k===i?0:-1;
+    });
+    panel.setAttribute('aria-labelledby','tab'+i);
+    panel.innerHTML='<div class="day-head"><div class="day-icon" style="background:var('+d.bg+')">'+ICON[d.icon]+'</div><div><p>Day '+(i+1)+'・'+d.d+'（'+d.w+'）</p><h3>'+esc(d.title)+'</h3><p>'+esc(d.sub)+'</p></div></div>'+
+      '<ul class="tl">'+d.stops.map(function(s){
+        var nameHtml='<a class="map-link" href="'+mapHref(s.map)+'" target="_blank" rel="noopener">'+esc(s.name)+PIN+'</a>';
+        var infoHtml=s.info?('<div class="tl-link"><a class="map-link" href="'+esc(s.info)+'" target="_blank" rel="noopener">'+LINKICON+'參考資訊</a></div>'):'';
+        var badgeHtml=(s.must?'<span class="must-tag">必去</span>':'')+(s.flex?'<span class="flex-tag">'+esc(s.flex)+'</span>':'');
+        return '<li'+(s.must?' class="must"':'')+'><div class="tl-time">'+esc(s.t)+'</div><div class="tl-rail"></div><div class="tl-body"><div class="tl-name">'+nameHtml+badgeHtml+'</div><div class="tags">'+
+          s.tags.map(function(t){return '<span class="tag t-'+t[0]+'">'+esc(t[1])+'</span>'}).join('')+'</div><div class="tl-desc">'+esc(s.desc)+'</div>'+infoHtml+'</div></li>';
+      }).join('')+'</ul>';
+    if(animate){panel.classList.remove('pop');void panel.offsetWidth;panel.classList.add('pop')}
+    layoutMono(i);
+    if(animate&&dayBtns[i].scrollIntoView){try{dayBtns[i].scrollIntoView({block:'nearest',inline:'center'})}catch(e){}}
+  }
+  window.addEventListener('resize',function(){layoutMono(cur)});
+  tabs.addEventListener('click',function(e){
+    var b=e.target.closest('.day-btn');if(b)renderDay(+b.dataset.i,true);
+  });
+  tabs.addEventListener('keydown',function(e){
+    var n;
+    if(e.key==='ArrowRight')n=(cur+1)%DAYS.length;
+    else if(e.key==='ArrowLeft')n=(cur+DAYS.length-1)%DAYS.length;
+    else return;
+    e.preventDefault();renderDay(n,true);dayBtns[n].focus();
+  });
+  var firstDay=0,nowT=Date.now();
+  if(nowT>=START&&nowT<END)firstDay=Math.min(6,Math.floor((nowT-START)/864e5));
+  renderDay(firstDay,false);
+
+  /* ---------- 行前費用分頁 ---------- */
+  var COST={
+    known:'<div class="budget-list">'+
+      '<div class="budget-row"><div class="name">機票（一大一小）<span class="pending-tag">待填</span><small>中華航空 CI753＋CI754</small></div><div class="amt">TWD 0</div></div>'+
+      '<div class="budget-row"><div class="name">住宿（6 晚）<span class="pending-tag">待填</span><small>米梧槽酒店 高級雙床房</small></div><div class="amt">TWD 0</div></div>'+
+      '<div class="budget-row"><div class="name">景點門票預購<span class="pending-tag">待填</span><small>環球影城、濱海灣花園、Mandai 雙園套票</small></div><div class="amt">TWD 0</div></div>'+
+      '<div class="budget-row"><div class="name">網卡 / eSIM<span class="pending-tag">待填</span><small>新加坡 7 天上網</small></div><div class="amt">TWD 0</div></div>'+
+      '<div class="budget-row"><div class="name">旅遊平安險＋不便險<span class="pending-tag">待填</span><small>一大一小 7 天</small></div><div class="amt">TWD 0</div></div>'+
+      '</div><div class="budget-total"><span>目前已知總額</span><b>TWD 0</b></div>'+
+      '<p class="note">只記錄實際已付款金額，避免把估價當成已付費用。</p>',
+    estimate:'<div class="rows">'+
+      '<div class="row-item"><span>濱海灣花園雙冷室<small>成人約 S$46／兒童 3–12 歲約 S$32</small></span><strong>約 S$78</strong></div>'+
+      '<div class="row-item"><span>環球影城（非尖峰起價）<small>成人約 S$76／兒童 4–12 歲約 S$69</small></span><strong>約 S$145</strong></div>'+
+      '<div class="row-item"><span>Mandai 雙園套票（河川＋夜間）<small>成人約 S$98／兒童 3–12 歲約 S$70</small></span><strong>約 S$168</strong></div>'+
+      '<div class="row-item"><span>國家博物館<small>非居民成人約 S$20／6 歲以下免費</small></span><strong>約 S$20–35</strong></div>'+
+      '<div class="row-item"><span>選配：OCBC Skyway<small>成人 S$14／兒童 S$10</small></span><strong>約 S$24</strong></div>'+
+      '<div class="row-item"><span>選配：S.E.A. 海洋館<small>成人約 S$44／兒童約 S$33</small></span><strong>約 S$77</strong></div>'+
+      '<div class="row-item"><span>選配：新加坡河遊船<small>成人約 S$28／兒童約 S$18</small></span><strong>約 S$46</strong></div>'+
+      '</div><div class="row-total"><span>必去門票小計</span><b>約 S$411–426</b></div>'+
+      '<p class="note">一大一小一組的參考價，為目前可查到的公開價格，不是 2027 年保證售價；環球影城依日期浮動。未含交通、餐飲、紀念品。</p>'+
+      '<p class="note"><a class="map-link" href="https://www.gardensbythebay.com.sg/en/frequently-asked-questions/general.html" target="_blank" rel="noopener">花園票價</a>　<a class="map-link" href="https://www.rwsentosa.com/en/attractions/universal-studios-singapore" target="_blank" rel="noopener">環球影城</a>　<a class="map-link" href="https://www.mandai.com/en/tickets-and-passes/promotions.html" target="_blank" rel="noopener">Mandai 套票</a></p>'
+  };
+  var costBody=document.getElementById('costBody'),costBtns=document.querySelectorAll('[data-costtab]');
+  function renderCost(which){
+    costBody.innerHTML=COST[which];
+    Array.prototype.forEach.call(costBtns,function(b){b.setAttribute('aria-selected',String(b.dataset.costtab===which))});
+  }
+  Array.prototype.forEach.call(costBtns,function(b){b.addEventListener('click',function(){renderCost(b.dataset.costtab)})});
+  renderCost('known');
+
+  /* ---------- 當地記帳（SGD） ---------- */
+  var EXP_KEY='sg2027-expenses',expenses=[];
+  try{expenses=JSON.parse(localStorage.getItem(EXP_KEY)||'[]')||[]}catch(e){expenses=[]}
+  function saveExp(){try{localStorage.setItem(EXP_KEY,JSON.stringify(expenses))}catch(e){}}
+  var expList=document.getElementById('expList');
+  function renderExpenses(){
+    if(!expenses.length){expList.innerHTML='<p class="note">目前尚無花費紀錄。</p><div class="row-total"><span>累計</span><b>S$0.00</b></div>';return}
+    var total=0,byDay={},days=[];
+    expenses.forEach(function(x,i){
+      total+=Number(x.amount);
+      if(!byDay[x.date]){byDay[x.date]=[];days.push(x.date)}
+      byDay[x.date].push({name:x.name,amount:x.amount,type:x.type,i:i});
+    });
+    days.sort();
+    expList.innerHTML=days.map(function(day){
+      var sub=0,rows=byDay[day].map(function(x){
+        sub+=Number(x.amount);
+        return '<div class="expense-name"><span>'+esc(x.name)+' <small>・'+esc(x.type)+'</small></span><span>S$'+Number(x.amount).toFixed(2)+' <button data-del="'+x.i+'" type="button" aria-label="刪除 '+esc(x.name)+'">刪除</button></span></div>';
+      }).join('');
+      return '<div class="day-expense"><b>'+esc(day)+'</b>'+rows+'<div class="note" style="text-align:right">小計 S$'+sub.toFixed(2)+'</div></div>';
+    }).join('')+'<div class="row-total"><span>累計總額</span><b>S$'+total.toFixed(2)+'</b></div>';
+  }
+  document.getElementById('addExp').addEventListener('click',function(){
+    var date=document.getElementById('expDate').value;
+    var name=document.getElementById('expName').value.trim();
+    var amount=Number(document.getElementById('expAmount').value);
+    var type=document.getElementById('expType').value;
+    if(!date||!name||!isFinite(amount)||amount<=0){alert('請填寫日期、項目與大於 0 的金額。');return}
+    expenses.push({date:date,name:name,amount:amount,type:type});
+    saveExp();
+    document.getElementById('expName').value='';
+    document.getElementById('expAmount').value='';
+    renderExpenses();
+  });
+  expList.addEventListener('click',function(e){
+    var b=e.target.closest('[data-del]');if(!b)return;
+    expenses.splice(+b.dataset.del,1);
+    saveExp();renderExpenses();
+  });
+  renderExpenses();
+
+  /* ---------- 清單打勾 ---------- */
+  var KEY='sg2027-checks',store={};
+  try{store=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){store={}}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+  function renderList(el){
+    var id=el.getAttribute('data-list'),L=LISTS[id],n=0;
+    var html='<div class="list-head"><h3>'+esc(L.title)+'</h3><span class="prog" data-prog></span></div><div class="bar"><i></i></div>';
+    L.groups.forEach(function(g){
+      if(g.name)html+='<p class="group-title">'+esc(g.name)+'</p>';
+      html+='<div class="checks">';
+      g.items.forEach(function(it){
+        var cid=id+'-'+(n++);
+        html+='<label class="check" for="'+cid+'"><input type="checkbox" id="'+cid+'"'+(store[cid]?' checked':'')+'><span>'+esc(it[0])+(it[1]?'<small>'+esc(it[1])+'</small>':'')+'</span></label>';
+      });
+      html+='</div>';
+    });
+    el.innerHTML=html;
+    update(el);
+    el.addEventListener('change',function(e){
+      if(e.target.type!=='checkbox')return;
+      if(e.target.checked)store[e.target.id]=1;else delete store[e.target.id];
+      save();update(el);
+    });
+  }
+  function update(el){
+    var boxes=el.querySelectorAll('input[type=checkbox]'),done=0;
+    Array.prototype.forEach.call(boxes,function(b){if(b.checked)done++});
+    el.querySelector('[data-prog]').textContent='完成 '+done+' / '+boxes.length;
+    var bar=el.querySelector('.bar i');
+    bar.style.width=(boxes.length?done/boxes.length*100:0)+'%';
+    bar.setAttribute('data-zero',done===0||done===boxes.length?'1':'0');
+  }
+  var listEls=document.querySelectorAll('[data-list]');
+  Array.prototype.forEach.call(listEls,renderList);
+
+  var clr=document.getElementById('clearAll'),armed=null;
+  clr.addEventListener('click',function(){
+    if(!armed){
+      clr.textContent='再按一次確定清除';
+      armed=setTimeout(function(){armed=null;clr.textContent='清除所有打勾'},3000);
+      return;
+    }
+    clearTimeout(armed);armed=null;store={};save();
+    Array.prototype.forEach.call(listEls,function(el){
+      Array.prototype.forEach.call(el.querySelectorAll('input[type=checkbox]'),function(b){b.checked=false});
+      update(el);
+    });
+    clr.textContent='已清除';
+    setTimeout(function(){clr.textContent='清除所有打勾'},1500);
+  });
+})();
+</script>
+
+</body>
+</html>
